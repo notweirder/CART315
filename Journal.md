@@ -1,4 +1,6 @@
-# Week 5: Game Analysis - Tetris Effect
+# Weekly Class Journal
+
+## Week 5: Game Analysis - Tetris Effect
 
 ![](https://cdn.mos.cms.futurecdn.net/hB8g5pmtRJsrhzVGQhXi3e-970-80.jpg.webp)
 Image Credit: PC Gamer (https://www.pcgamer.com/tetris-effect-pc-review/)
