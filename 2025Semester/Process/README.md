@@ -18,4 +18,4 @@ In addition, the platform was significantly glitchier than I had expected. Tiles
 My procrastination meant that I had put off the project until the last minute, so I had to make something quick and scrappy. I wished I had a bit more “gameplay” instead of walking around and clicking on sprites but even still, there were some keen observations I had noticed through playtesting. The first is that while I had thought it would be best to make the avatar and background sprites the same colour for consistency, it was surprisingly hard to tell the two apart. In addition, I should have been more careful with the tile size limits. Representing a beach with a volleyball court could be done, but I was a little too sloppy with the pixel art and as a result players had a hard time telling what was what. In addition, there was the expectation that players could enter said volleyball court, which I intentionally made not the case. In the future I should do a better job communicating what is interactable and what is not.
 
 *This volleyball court isn't actually explorable :( *
- <img src="media/1_volleyball.png" width ="200"> 
+ <img src="media/1_volleyball.PNG" width ="200"> 
