@@ -1,3 +1,51 @@
+# March 20, 2025
+Starting this off by mentioning I'm going to be writing multiple entries per week, and am now starting off with specific dates (e.g. "March 20, 2025") rather than "Week 1", "Week 2" etc. There is a lot of catching up I have to do and it's easier to sporadically write entries than have to figure out the math of "Week 8.17" etc.
+
+## Where I've been
+Here's the rundown of where I've been so far: The first week or so of this course was fine, but afterwards up until mid-February I was quite busy with a class from the previous semester I had received an extension for (CART 351). It consumed most of my time trying to wrap everything up and once that was done I had taken the week off for myself, as of a reward for having that weight off my shoulders. From there it was reading week, which I was pretty busy most of the time (though I did squeeze in a good amount of playing Keep Driving) Early March I had planned to start a big catch-up in this course, and just my luck...I caught the flu (so I was out for a week). Now..finally it's March 20th and the catch-up truly begins now. I had struggled to read the textbook but recently made a commitment to getting through it a short while ago and have been making steady progress. I am currently finished chapter 28, and have to get through chapter 25 (Debugging) & chapter 7 (Acting Like a Designer). 
+There's also ADHD stuff I'm working through and that's been a whole thing. There's a fine line of mental health issues taking over my life and things genuinely being my fault and I don't know which side of that line I'm on (is that the right metaphor?)
+ 
+## Exploration Prototype #1
+
+### Concept
+As someone who has had issues with scope and figuring out an idea that I won't get lost in for weeks, I decided to cheat and use a tip taught later in the course: brain dumping. I gave myself a two minute timer, and generated the following ideas on how to tweak the fallingAsleep project:
+- Bounce balls back up
+- Change color of paddle to ball
+- Spawn balls from all sides, dodge
+- Spawn pellets you have to collect (pac-man)
+- Physics simulation, drop ball along slopes and the ball changes color
+- Push block into goal (sokoban)
+- Sort colours into blocks (Mario party)
+
+I decided on the last idea, which was actually *not* from Mario Party, but from Wii Fit Plus (deep pull I know). The image below is a screenshot from the game. It's pretty simple, you just tilt a paddle to sort the colour of the ball into the matching pipe. What makes it tricky in the Wii U game is you have to tilt the balance board but I digress... 
+
+![](https://static.wikia.nocookie.net/wiisportsresortwalkthrough/images/3/30/TiltCity.jpg)
+
+(Image from wiikipedia.fandom.com/wiki/Tilt_City)
+### Process
+
+
+![A](https://i.imgur.com/wzsc02Z.gif)
+
+
+I started off by rotating the paddle around in place with the arrow keys
+
+![A](https://i.imgur.com/LQgkXe5.gif)
+
+Then I changed the ball dropper to randomly assign a ball a "left" or "right" tag and change the colour depending on which tag it had. From there it was as simple as creating two box colliders and adding tags to them as well, then checking if they matched through C# code. If they did, the score would increase. Easy, right?
+
+![A](https://i.imgur.com/UjabeTu.png)
+
+Because I'm smart, I decided to attach the *global* score values to the *instanced* balls. For some random reason that was totally not my fault, they were only logging their individual scores, hence I was just getting -1s or +1s.
+
+![A](https://i.imgur.com/kiJuJCU.png)
+
+To fix this, instead of creating two separate box colliders, I would have one large box collider and then just check what side each ball was on. Instead of assigning a score to an instanced ball, I would instead assign a global score to just this one one box collider. I know hard coding isn't great...but it works, and for the first exploration that's good enough!
+
+![](https://i.imgur.com/BHly04e.gif)It works! Not sure why imgur is adding all these dots though so just ignore that 
+
+
+
 # Week 1.5 - Explore Unity
 Going to be honest, this was a stressful week! A lot going on with other courses and life(tm) made it difficult to get any work done. I have nothing to show for today * but * hopefully this evening or tomorrow a Week 2 post will appear of me actually doing this week's assignment. I should note that I do take a bit of accountability for pushing this week's work off til the last minute, one of these days I'll fix that...
 
