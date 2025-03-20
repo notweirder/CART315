@@ -25,12 +25,12 @@ I decided on the last idea, which was actually *not* from Mario Party, but from 
 ### Process
 
 
-![A](https://i.imgur.com/wzsc02Z.gif)
+![A](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExemZtMWkxMHR5NW5sZWl2NDM1NHNhZXE4enBjMHMzaHFodjh5dDVjaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VfAhyMpHAf9RY5eiNu/giphy.gif)
 
 
 I started off by rotating the paddle around in place with the arrow keys
 
-![A](https://i.imgur.com/LQgkXe5.gif)
+![GIF broken so here's a temp mp4 link](https://i.imgur.com/6MgLBJ3.mp4)
 
 Then I changed the ball dropper to randomly assign a ball a "left" or "right" tag and change the colour depending on which tag it had. From there it was as simple as creating two box colliders and adding tags to them as well, then checking if they matched through C# code. If they did, the score would increase. Easy, right?
 
