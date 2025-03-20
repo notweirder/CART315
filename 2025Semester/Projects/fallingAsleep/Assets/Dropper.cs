@@ -29,6 +29,6 @@ public class Dropper : MonoBehaviour
         float next = Random.Range(0.25f, 1.5f);
         yield return new WaitForSeconds(next);
         // go again
-        StartCoroutine(Drop());
+        StartCoroutine(Drop()); 
     }
 }

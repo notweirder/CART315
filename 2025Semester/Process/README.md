@@ -1,7 +1,9 @@
-# Week 1.5 - Explore Unity
+# March 6
+I'm starting off this journal by stating that I have changed my documentation headers from numbered weeks to specific dates
+# January 30 - Explore Unity
 Going to be honest, this was a stressful week! A lot going on with other courses and life(tm) made it difficult to get any work done. I have nothing to show for today * but * hopefully this evening or tomorrow a Week 2 post will appear of me actually doing this week's assignment. I should note that I do take a bit of accountability for pushing this week's work off til the last minute, one of these days I'll fix that...
 
-# Week 1 - Make A Thing
+# January 23 - Make A Thing
 I was surprised at how much using Bitsy was an exercise in frustration. While the focus of the platform is on how restricted your toolset is, the lack of quality of life features felt like an oversight rather than an intentional decision. Having no option to rotate tiles meant that what could have been a quick one and done process became a task I had to repeat four times, which also took away from productivity as I had to sort through three duplicate tiles in my tileset.
 
  *Two of the same tiles "rotated" are really just two seperately drawn tiles*
