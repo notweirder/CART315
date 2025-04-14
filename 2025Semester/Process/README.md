@@ -1,3 +1,37 @@
+# April 14, 2025
+
+I Decided to start using Obsidian to write down my journals, this app rules! 
+## Catching up on classes (put genuinely not intended)
+Starting this journal by stating that reread through [Chapter 26 of IGDPAD](https://learning-oreilly-com.lib-ezproxy.concordia.ca/library/view/introduction-to-game/9780136619918/ch26.xhtml#ch20lev1sec7), and some of [Chapter 27](). I wanted to refresh myself on classes in C# and realized I had last opened the Boids project from Chapter 27 about a month ago... At the time I understood *most* of the text but was very confused at why the author had to create two instances of the boidSettings class. I now understand it was because you can't set static variables in the inspector (which I read before but never clicked until now). I still have more questions about serialization, why the class is able to be accessed without a constructor, and why `this.GameObject.GetComponent<>` is the same as `GetComponent<>`but I have to put that on the back burner for now.
+
+## Exploration Prototype 2
+
+### Process
+
+For this prototype I believe a simple way to explore physics, scoring and tags would be to create a simple shuffleboard game (in 2D). At the time of writing (before starting), I believe what I need to accomplish is the following
+- Create a disc with friction that charges up it's force while the mouse is held down
+- Create multiple target zones (with tags?), detect what zone the disc is in
+- Score points and reset
+I realize this is quite similar to Pawng but I don't intend to reuse much code from that class lesson.
+
+I attempted to do friction from the top down but that didn't exactly work because it would either a) push the board or b) go right over it. Reddit posts I found suggested simply slowing down the velocity over time and that made sense. 
+
+---
+Well that kind of worked! It's honestly quite boring but it works so there's that. The big issue I ran into was getting the zones to work since the disc could overlap into multiple ones at the same time (e.g. medium and hard difficulty). When this occurred it appeared to be a coin toss for what Unity decided. I'm sure there's a proper solution to this problem but I'm already getting lost in trying to solve this so I need to stop and be okay with it not working perfect. My duct tape solution is to reduce the size of the puck so that the odds of overlapping are reduced.
+
+Image: I implemented a switch case which felt nice, a lot cleaner than a bunch of if statements 
+![](https://i.imgur.com/dmRN0VH.png)
+
+GIF: "Finished" Game
+
+![Example Gameplay](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXdmbWpyZHl3Nzh3bXdxa2x6Mmk2ZDY5cndvM3gxcjl6NnlobXQ3MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Udu2SV6LXg0uKd07Yc/giphy.gif)
+
+### Reflection
+
+While this was a decent way to get to grips with Unity, I'm realizing that this exploration was more of a technical exercise than a creative one. I'm very much not pushing the limits of game design by recreating shuffleboard. Still, I'm glad I decided to create something from scratch instead of reusing a template. One important lesson I learned from this exploration was understanding that it's possible for me to create  a smaller scoped project and feel fine with it. I purposely stopped myself from spending too much time and getting too attached. While that may be creatively unfulfilling (and is something I can work on balancing), it feels nice to have a small project completed for once in my life. Future iterations of this shuffleboard game could include multiplayer, fixed collision detection and UI elements. Future exercises could be improved by setting creative and technical goals.
+
+
+
 # March 20, 2025
 Starting this off by mentioning I'm going to be writing multiple entries per week, and am now starting off with specific dates (e.g. "March 20, 2025") rather than "Week 1", "Week 2" etc. There is a lot of catching up I have to do and it's easier to sporadically write entries than have to figure out the math of "Week 8.17" etc.
 
