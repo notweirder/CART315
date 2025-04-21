@@ -1,3 +1,27 @@
+# April 21, 2025
+
+## Catching up on Breakout
+
+Being overconfident in my Unity skills, I skipped the Breakin' Out tutorial section so I am now spending time going through it to understand what was taught in that class (namely singletons).
+
+## Exploration Prototype 3
+
+For this prototype I would like to expand on my previous project and create a game of pool. There are some twists that I would like to apply in order to learn about timers, singletons, spawning children with different variables, and object rotation with quaternions. The idea is a normal game of pool except the balls only show their colours/point values when they have collided with other game objects, and then fade back to black. 
+
+I have attempted to get the pool cue to rotate with the mouse but the position of the mouse is set to the entire world, not the local world. Doing some research, it appears Camera.ScreenToWorldPoint will work...and it does! That's a good feeling
+
+----
+Update: It's been about five days since I started working on this project and I think I need to call it quits on this one. I got very lost in the sauce attempting to figure out how to rotate the pool cue and then launch it. I don't exactly know what's happening here with the mouse movement, it wasn't rotating correctly though.
+
+![Pool cue rotating around centre based on mouse movement, but it is not rotating correctly](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXRmM2tyc243eGd1NGp4azN3aXl1cmE5Z3M5dDB4ZTQ4Nnc3MDMzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ekf7OYTHIluA7V97Kk/giphy.gif)
+
+I then tried to learn rigidbodies and hinge joints which had their own set of issues, namely the cue not launching when i wanted it to. 
+
+
+![Cue rotating around cue ball  but not launching correctl](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXh5cXRtZ215OGJ0MW5xZG9vODNoZnl4YmhsYzQyazl2eWhhbm54biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4Mbl6zgZWnvTg5h0wl/giphy.gif)
+
+In hindsight, I may have been overambitious yet again. The rotation would have been nice, but it didn't have anything to do with singletons or spawning variables so spending all my time on that was a mistake (not to say I learned nothing). I still like the idea, so I'll be using the next exploration prototype as a redo of sorts. Thinking about it now..maybe I should just have made it so the ball was controlled directly, instead of the cue.
+
 # April 14, 2025
 
 I Decided to start using Obsidian to write down my journals, this app rules! 
