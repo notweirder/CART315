@@ -1,3 +1,14 @@
+# April 25, 2025
+
+## Redo from last week
+
+So far this project has been pretty simple. I've copied code from the breakout script to instantiate pool balls and added a random colour to them (thanks to to Alex09 on [stackoverflow](https://stackoverflow.com/a/48844708) ). Currently the main thing bothering me is that the balls aren't centered. I found a unity [forum post](https://discussions.unity.com/t/centering-instantiated-gameobjects-grid-to-the-center-of-the-screen/826171) that seems to have the solution but I don't totally understand it right now. I have decided to switch to a triangle instead of a grid because that seems to make more sense for a pool game. After several hours of trying to get the pyramid to centre itself, I realized I could just build one on it's side and then rotate it 45 degrees which is kinda easier. I then have to shift it over manually which is bothering me to no end because of my hatred for hardcoding (if i change the number of rows from 3->4 it gets off-centre again) but whatever, it is what it is. They're also not perfectly centred, but again, whatever. Now it's getting the balls to have a proper weight from them. It's now the next day and I got it working (or close enough)! 
+
+When you start the game, it places the pool balls in a triangle, and then you are free to launch the cue ball at them. Every time you sink the ball into a hole, the balls delete themselves and the global score goes up. 
+![Start screen](https://i.imgur.com/zWKnEKX.png)
+![Hit balls](https://i.imgur.com/HbJMJHs.png)
+![Hit balls again](https://i.imgur.com/ctdjQjY.png)For whatever reason unity was giving me errors with Random, so while I could in theory set the pool balls to have different point values, for the sake of this prototype I just needed to submit it, so I set them all to be worth one point. Last time I said it felt nice to just have *something*, but it feels extra nice to actually have something that's kinda fun! I can see myself turning this into a more fleshed out game, and I might further develop this for my final project. Also for this class maybe it's not so bad to hardcode some positions in, considering that's what was done for the breakout example. This isn't the best game in the world but it pretty much accomplishes what I wanted to do. I still got stuck in a rut trying to get the pyramid positioning to work, but I spent the same amount of time getting this whole project done as I did just trying to get the pool cue to hit the ball. Honing in on just the fundamentals
+
 # April 21, 2025
 
 ## Catching up on Breakout
