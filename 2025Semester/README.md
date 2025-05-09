@@ -1,5 +1,5 @@
 # Eric's car prototype
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmI1YXkzNWgzaGt6bjZ6cXpiYXE3dGVjaXplOWV3Yjl6bjZ0NmZtbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dzcmrLYzJ8M3sCFN2f/giphy.gif)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2I3aHZiZHpodHowdXJmaGs2cXJ5ZW1nYWJuNWI4Y2d1Y3owMjdnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ThNFpNgRsJ5ZhJXMek/giphy.gif)
 -- 
 Eric's car prototype is a toy in which you gain control over the terrain in a city and can mess with it as you please (within reason). The game is built around three pillars: Cars, Destinations, and Terrain Effects
 
