@@ -11,7 +11,7 @@ After a bunch of messy coding, I came up with the following: The terrain effects
 
 In a perfect world, I would have a separate UI where you could drag down the terrain effects from a menu bar, but time does not allow for that. I settled for random spawn locations that the user then drags to a location of their choosing. I initially capped the max amount of terrain effects at four but that was quite boring. I crave chaos so I doubled the limit to eight. I also reduced the spawn rate from five seconds down to three. However, that felt a bit much so instead I put the spawn rate back up to five seconds and kept the terrain effects on screen longer (so there could be more on screen at once). With that, I was pretty much done!
 
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmI1YXkzNWgzaGt6bjZ6cXpiYXE3dGVjaXplOWV3Yjl6bjZ0NmZtbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dzcmrLYzJ8M3sCFN2f/giphy.gif)
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2I3aHZiZHpodHowdXJmaGs2cXJ5ZW1nYWJuNWI4Y2d1Y3owMjdnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ThNFpNgRsJ5ZhJXMek/giphy.gif)
 
 The good sign is that I'm having some fun playing it myself. It's goofy in just the ways I wanted: lining up several water effects to get the cars dashing into a void, or having them trudge through mud only before scrambling them and having the cars go the exact opposite direction. Good stuff!
 
