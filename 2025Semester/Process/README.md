@@ -1,3 +1,185 @@
+# May 9, 2025
+## Iteration 5
+
+Question: How can terrain effects be placed in a way is entertaining and also doesn't break the game
+
+I figured it would make sense to drag and drop these effects on the map with the mouse, so I found a [tutorial](https://www.youtube.com/watch?v=izag_ZHwOtM) online to help me out. 
+
+After a bunch of messy coding, I came up with the following: The terrain effects spawn in and pulse to notify that they're interactive. When you grab one, it becomes larger to signify it's currently held, and then when it drops it is placed on the ground of the scene and is interacted with the cars as normal. From there, after a ten second timer the terrain effect starts to fade out, and at the end of that they delete themselves. 
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3U0ODZmcW5jNXFrN2RscWFucGJiMnpneTg4NGtwbml2azBpMzU5dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dzcmrLYzJ8M3sCFN2f/giphy.gif)
+
+In a perfect world, I would have a separate UI where you could drag down the terrain effects from a menu bar, but time does not allow for that. I settled for random spawn locations that the user then drags to a location of their choosing. I initially capped the max amount of terrain effects at four but that was quite boring. I crave chaos so I doubled the limit to eight. I also reduced the spawn rate from five seconds down to three. However, that felt a bit much so instead I put the spawn rate back up to five seconds and kept the terrain effects on screen longer (so there could be more on screen at once). With that, I was pretty much done!
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmI1YXkzNWgzaGt6bjZ6cXpiYXE3dGVjaXplOWV3Yjl6bjZ0NmZtbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dzcmrLYzJ8M3sCFN2f/giphy.gif)
+
+The good sign is that I'm having some fun playing it myself. It's goofy in just the ways I wanted: lining up several water effects to get the cars dashing into a void, or having them trudge through mud only before scrambling them and having the cars go the exact opposite direction. Good stuff!
+
+
+
+# May 8, 2025
+## Iteration 4
+
+Question: How can I add weather effects into the game?
+
+This iteration is implementing what I've had in mind for a while. I need there to be something spicy to this game so the ideas I have are the following:
+- Rain that speeds up the cars
+- Mud that slows down the cars
+- Boulders that block cars from moving
+- Black holes that delete cars
+- UFOs that scramble the car destinations
+
+Wow, this actually worked exactly how I hoped it would! I'm not sure why I love switch cases so much at the moment but they feel super satisfying to implement
+![](https://i.imgur.com/7yEyMg5.png)
+
+Something helpful about the prototyping phase is that I can see what happens when I add these terrain effects into the game. First of all, they're very fun! Second of all, since I ended up adding a simulated rigid body in, the cars ended up bouncing up against each other, so when one suddenly switched directions because of the scramble effect, it created a traffic jam. This is exactly the kind of silliness I wanted so I'm over the moon to see this in action. However, this traffic jam does make the game unplayable, so I need to create a more complex terrain for the cars to move through so they have alternative paths. Time to do that!
+
+![](https://i.imgur.com/PfgyFwu.png)
+
+The more complex environment is done! Look pretty good too :) Something I noticed was there was too much traffic jams for my liking so I decreased the car size by half which is a lot more reasonable. I also tweaked the code for the scrambler so that it couldn't randomize to the same destination as before. One more change to make is that object pathing can butt heads with each other, so to prevent that I will increase the resolution of the grid, giving more options for the cars (hopefully reducing the odds of this). Update: It still happens but it's kinda funny so I'll leave it in as an intentional bug. 
+
+![](https://i.imgur.com/j1V2tT5.png)
+
+Question: How can I add weather effects into the game?
+
+Answer: Pretty easily, but they're going to mess with the way the cars drive so you have to redo the map and the size of the cars to prevent infinite traffic jams. 
+
+# May 7, 2025
+## Iteration 3
+
+After reflecting on my ideations from last week, I have settled on a good solution for this next session. I will be testing the size of the game map, with three sizes: small, medium, and large. To start this, I need to do some more skeletal work which means getting a spawner system working.
+
+Something I assumed would be fine was the fact that the cars can move in the same lane and moving past each other. If this is supposed to be a simulation of road infrastructure (albeit a silly one), it certainly doesn't feel like it. I have a few options going forward
+1) Ignore this completely
+2) Retheme the game to make these errors canonical
+3) Fix these errors (which I'm realizing will be difficult because local avoidance is a pro feature)
+
+For now, I'm not sure what to do so I'm going to keep trucking along with this prototyping session and keep that as a note for the future (and hope it doesn't come back to bite me). Okay, on to actually prototyping
+
+## Finding the right size
+
+![](https://i.imgur.com/rOkai84.png)
+
+I can tell the large scale map is too much work for what I want to do. I hate connecting all these paths together in unity. Maybe a proper level editor would make things easier but for now I just don't have the time. I've been trying to get the GameObject paintbrush working but it's just a complete nightmare. I actually think a large-ish map would look quite nice, but for the sake of this prototype I don't have the time and I am going to be working on the small scale map for now. 
+
+I understand this is a weird way to prototype, but I'm going to build the prototype in such a way that it's modular and can adapt to a larger map size in the future. I guess this iteration is complete? I need to move on anyways. 
+
+- Question: What map looks good?
+- Answer: Slightly smaller than large, but it's currently unfeasible. 
+
+
+
+
+
+# May 6, 2025
+## Iteration 2
+
+Things are starting to take shape. I started out by creating square pathways for the cars to move along, acting as roads. One straight path, one corner and one t-junction. It took a few attempts to get these paths to align with each other, but once they lined up it was as if I was playing with legos. 
+
+Below: Corner piece
+![Corner piece](https://i.imgur.com/3sXpCgu.png)
+
+Initially the car would cut corners on its way to its destination because it would stick too close to the walls, and that looked bad. 
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDlkN3NiZW93cjZnbXB5YjIxaXkyM3FneXd5emsydDZzbmJqYXY4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A5J03gZyh946GCt39p/giphy.gif)
+After some toying around, I realized I could add some extra space around the walls if I increased the pathfinder grid resolution. 
+![](https://i.imgur.com/1ukaXtI.png)
+
+From there it was code/logic time. Things are slightly out of order so you're already seeing it implemented in the previous gif, but the plan was to spawn a car with a random destination (that matched its colour). To get it working with a prefabricated object (the cars), I had to create a singleton to keep track of all the destinations, and then when the prefab was instantiated I would take a random destination from the singleton and set it as the point for the prefab to move towards. I kinda understand why singletons are dangerous but in this context I think it's fine. There's some other work I did as well but that's the gist of it.  
+
+## *Thinking about* iteration 2
+
+I'm wondering if I'm doing this whole iteration thing correctly. Things are going to plan which means I'm just trucking along. When I hear the word iteration I think seeing what works and what doesn't, and then correcting your course accordingly. In other words, a "yes, but". If I'm being kind to myself, I think it's fine for things to work out, otherwise I'd be faking things going wrong which would be weird! Another thing is that I'm still building out the game, and it's simple enough that I know it's possible. Whether or not it's enjoyable is another question, and I won't know if that's the case until I keep building the skeleton of this game. Perhaps the real iteration comes once that skeleton is complete. Anyways that was a ramble to end this iteration log, treating it like a blog at this point. 
+
+-Eric
+
+
+# May 3, 2025
+## Iteration 1
+
+For this iteration, I want to get path navigation working. It was a bit of a mess trying to figure out how to do it on my own since the navmesh agent was just for 3D projects. Luckily the lord and saviour Brackeys has a tutorial explaining how to accomplish exactly what I wanted to do, leading me to find A* Pathfinding by Aron Grandberg. Turns out games like Darkwood, Cult of the Lamb and Void Bastards all use it! The documentation is super thorough which is a godsend, and has turned what would be a ten hour process into less than an hour of work. The purpose of this iteration was to simply see if my idea was possible, and good news: it is!
+
+![Simple footage of a green ball heading towards a red ball while avoiding walls](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHI0cWxhd3IzdzJ3MWs2M2huZWdobHdmZW54cG14YmF1d2g1a3ZieiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SE5zavbpST9MVAiZ7W/giphy.gif)
+
+Now it's time to flesh out the game..
+
+# April 26, 2025
+## Catching up on Design Values
+
+I believe it would be smart for me to read through Colleen Macklin and John Sharp's [article/chapter](https://www.informit.com/articles/article.aspx?p=2697997) on design values in order to go in to my ideation session with an informed mindset, since it's been a few weeks since the lecture on said topic. Done. Something I didn't think about much was how the design values are the main north star when designing a game. I'm not quite at the level of a pro game designer so I'm going to do some handholding and break down the design values one by one. Unfortunately I have no idea if I should come up with my design values or concepts first, so I'm going to vaguely state my intentions and then go into more detail for each idea. Maybe this is my NYU Game Center jealousy speaking but I kinda want to take a stab at a digital toy. Games like [ODDADA](https://store.steampowered.com/app/1627870/ODDADA/) , [Nour: Play with Your Food](https://store.steampowered.com/app/1141050/Nour_Play_with_Your_Food/), [Hideko](https://store.steampowered.com/app/3256030/Hideko/) or [Plaything](https://www.vam.ac.uk/dundee/info/plaything)[^1] (and to a lesser extent [Placid Plastic Duck Simulator](https://store.steampowered.com/app/1999360/Placid_Plastic_Duck_Simulator/)). While I can't answer every design value without knowing my theme, I can start pointing towards some goals. I want the game to be low challenge, and to be bold I'll state that I want it to have no lose condition. Drawing from Plaything, I want this to have the feel of a web game, akin to something you'd play on a bespoke website dedicated to it. With those two out the way, I am going to ideate on the concept so I can fill in the following design values: experience, theme, point of view, decision-making, skill and emotions. 
+
+Pool:
+- Swimming pool
+- Objects pooling together
+- Pool game
+- Putting money together
+- Carpooling
+- Rich people
+- Changing seasons
+- Filling with different liquids
+- Scrooge McDuck swimming in money
+- Pool balls
+- Poodle?
+- Poo? (No)
+- Water
+- Chlorine
+- Floaties
+- Lifeguards
+- Lazy rivers
+
+Cleaning:
+- Reverse splatoon
+- Swiffer
+- Moving objects away
+- Unpacking (video game)
+- OCD
+- Marie Kondo
+- Removing digital artifacts
+- At ease
+- Physical effort
+- Mom
+- Sorting items
+- Uncovering objects
+- Gloves
+- Smell (good and bad)
+- Washing machine
+- Dishwasher
+- Soap
+
+Because this is a unity class, I plugged the two lists into a script and had them spit out every possible combination. From there it was just a case of scrolling through the list and picking out random combos that sounded interesting. 
+
+Carpooling + Removing digital artifacts
+
+Rich people + Smell (good and bad)
+
+Pool balls + Swiffer
+
+It's surprisingly hard to come up with a good game idea, even when the concepts are narrowed down. I know I want to make a digital toy, but that's so vague, and these three concepts don't inherently lend themselves to that idea. I'm trying to think what I want to put into the world. I'm pretty into the idea of carpooling because I like the idea of cars moving on their own, and you have control over some aspect of them. Maybe the roads, the traffic, the environment, the drivers, the passengers, or maybe the cars themselves. 
+
+My problem statement will be as follows: How can I make a game where road infrastructure feels like a toy?
+
+Three offshoots off of this idea are as follows
+- You create your own paths and cars automatically populate on them (like Townscaper of Tiny Glade)
+- There's pre-existing infrastructure that you wreck havoc on (meteors, potholes, etc.)
+- You make your own cars and then watch them go about their day
+
+Emotion: I want this game to make people smile, and my pipe dream is to make them laugh
+Decision-making: Players will have an empty canvas with various options presented in front of them, restricted in some sort (e.g. a grid)
+Point of view: This will be top down (birds eye view), a sort of "god game" to quote peter molyneux. The game will be represented through abstract shapes, similar to Mini Motorways. 
+Theme: A broad description would be "light chaos", delivered through systemic interactions in the world. 
+Experience: The player will be able to shape this small world in a way they see fit. The interactions will be light and bubbly (reflected in the UI), with bright colours to make them feel at ease. 
+Skill/chance. Uncertainty will develop from the option presented to the players (e.g. you will have to pick between a meteor or a flood for one event), as well as no indication as to what anything does. You have to experiment to see what happens, similar to how no toy has a paragraph of text on it. 
+
+I feel like I now have a better north star to point towards so it's time to get prototyping!
+
+![](https://i.imgur.com/QVHSLii.jpeg)
+
+Quick paper sketch of the idea for the game
+
+
+
+[^1]: Side note: I randomly stumbled upon Plaything a few weeks ago and not only is it a really great experience but it was also made in part by one of the Despelote devs, *and* I learned that the curator of the project (Marie Foulston) has unsurprisingly worked with Pippin in the past.
+
+
 # April 25, 2025
 
 ## Redo from last week
